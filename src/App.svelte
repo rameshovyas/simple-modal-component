@@ -1,0 +1,40 @@
+<script>
+	
+	import Modal from './Modal.svelte';
+
+	let showModal = false;
+
+	const toggleModal = () =>{
+		showModal = !showModal;
+	}
+</script>
+
+<Modal message="This is a value from prop" {showModal} isPromo={true} on:click={toggleModal}/>
+
+<main>
+	<button on:click={toggleModal}>
+		Click to show Modal
+	</button>
+</main>
+
+<style>
+	main {
+		text-align: center;
+		padding: 1em;
+		max-width: 240px;
+		margin: 0 auto;
+	}
+
+	h1 {
+		color: #ff3e00;
+		text-transform: uppercase;
+		font-size: 4em;
+		font-weight: 100;
+	}
+
+	@media (min-width: 640px) {
+		main {
+			max-width: none;
+		}
+	}
+</style>
